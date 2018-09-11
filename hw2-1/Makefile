@@ -1,11 +1,14 @@
 all: one two 
 
+CC = g++
+WORK1 = array_pointer
+WORK2 = call_by_reference
+
 one:
-	g++ array_pointer.cc -o array_pointer 
+	$(CC) $(WORK1).cc -o $(WORK1)
 
 two:
-	g++ call_by_reference.cc -o call_by_reference
-
+	$(CC) $(WORK2).cc -o $(WORK2)
 clean:
-	rm -rf array_pointer call_by_reference 
+	rm -rf $(WORK1) $(WORK2) 
 
