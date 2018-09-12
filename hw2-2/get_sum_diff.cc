@@ -12,6 +12,6 @@ int main()
     int a,b;
     scanf("%d %d", &a, &b);
     getSumDiff(a, b, &pSum, &pDiff);
-    printf("Sum: %d, diff: %d", pSum, pDiff);
+    printf("Sum: %d, diff: %d\n", pSum, pDiff);
     return 0;
 }

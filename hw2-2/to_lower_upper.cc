@@ -14,3 +14,4 @@ int main() {
     printf("%s\n", inputStr);
     return 0;
 }
+
