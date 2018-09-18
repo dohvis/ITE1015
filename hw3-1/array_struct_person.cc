@@ -8,6 +8,9 @@ struct person {
     int age;
 };
 
+void printStruct(struct person* pPerson) {
+    cout <<"name: " << pPerson -> name << endl << "age: " << pPerson -> age << endl;
+}
 
 int main()
 {
@@ -16,8 +19,8 @@ int main()
         cin >> Person[i].name;
         cin >> Person[i].age;
     }
-    for(int i=0;i<3;i++) {
-        cout <<"name: " << Person[i].name << endl << "age: " << Person[i].age << endl;
+    for(int i=0; i<3; i++) {
+        printStruct(&Person[i]);
     }
     return 0;
 }
