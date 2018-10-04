@@ -79,7 +79,15 @@ LinkedList::LinkedList(){
 }
 
 LinkedList::~LinkedList(){
-    cout << "LIST DELETED" << endl;
+    Node* head = this->head;
+    Node* tmp = head->next;
+    while(tmp != NULL) {
+        head->next = tmp->next;
+        tmp->next = NULL;
+        delete tmp;
+        tmp = head->next;
+    }
+    // cout << "LIST DELETED" << endl;
 }
 
 
@@ -103,8 +111,9 @@ void LinkedList::printAllNodes() {
 void LinkedList::printOnlyIDStartWith(string startWith) {
     Node* head = this->head;
     while(head != NULL) {
-        if(util::startWith(head->studentInfo.id, startWith))
-        util::print(head->studentInfo);
+        if(util::startWith(head->studentInfo.id, startWith)) {
+            util::print(head->studentInfo);
+        }
         head = head->next;
     }
 }
