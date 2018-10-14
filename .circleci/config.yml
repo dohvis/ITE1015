@@ -1,4 +1,5 @@
 version: 2
+
 jobs:
   build:
     docker:
@@ -6,5 +7,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: install dependencies
+          command: apt-get update && apt-get install -yy build-essential g++ cmake
+      - run:
           name: make all projects
           command: ./make_all_projects.sh
+

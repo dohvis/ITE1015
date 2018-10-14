@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #define SIZE 5
 
 using namespace std;
