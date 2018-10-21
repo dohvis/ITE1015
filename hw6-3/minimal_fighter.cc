@@ -3,6 +3,9 @@
 
 MinimalFighter::MinimalFighter() {
     // : 체력 0, 공격력 0, 상태 ‘Invalid’로 초기화
+    this->mHp = 0;
+    this->mPower = 0;
+    this->mStatus = FighterStatus::Invalid;
 }
 
 MinimalFighter::MinimalFighter(int _hp, int _power) {
@@ -57,7 +60,5 @@ void MinimalFighter::fight(MinimalFighter *_enemy) {
     // 동시에 죽을 경우 둘 다 죽은 것으로 처리한다.
     while (this->status() != FighterStatus::Dead && _enemy->status() != FighterStatus::Dead) {
         this->hit(_enemy);
-
     }
 }
-
