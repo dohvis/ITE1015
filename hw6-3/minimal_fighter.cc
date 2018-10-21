@@ -5,26 +5,26 @@ MinimalFighter::MinimalFighter() {
     // : 체력 0, 공격력 0, 상태 ‘Invalid’로 초기화
     this->mHp = 0;
     this->mPower = 0;
-    this->mStatus = FighterStatus::Invalid;
+    this->mStatus = Invalid;
 }
 
 MinimalFighter::MinimalFighter(int _hp, int _power) {
     // : 체력과 공격력을 주어진 값으로, 상태 ‘Alive’나 ‘Dead’로
     this->setHp(_hp);
     this->mPower = _power;
-    this->mStatus = FighterStatus::Alive;
+    this->mStatus = Alive;
 }
 
 
-const int MinimalFighter::hp() {
+const int MinimalFighter::hp() const {
     return this->mHp;
 }
 
-const int MinimalFighter::power() {
+const int MinimalFighter::power() const {
     return this->mPower;
 }
 
-FighterStatus MinimalFighter::status() {
+FighterStatus MinimalFighter::status() const {
     // const : 체력, 공격력, 상태를 리턴
     return this->mStatus;
 }
@@ -32,7 +32,7 @@ FighterStatus MinimalFighter::status() {
 void MinimalFighter::setHp(int _hp) {
     this->mHp = _hp;
     if (this->mHp <= 0) {
-        this->mStatus = FighterStatus::Dead;
+        this->mStatus = Dead;
     }
 }
 
@@ -58,7 +58,7 @@ void MinimalFighter::attack(MinimalFighter *_target) {
 void MinimalFighter::fight(MinimalFighter *_enemy) {
     // Fighter와 enemy가 둘 중 하나가 죽을 때까지 공격을 교환한다.
     // 동시에 죽을 경우 둘 다 죽은 것으로 처리한다.
-    while (this->status() != FighterStatus::Dead && _enemy->status() != FighterStatus::Dead) {
+    while (this->status() != Dead && _enemy->status() != Dead) {
         this->hit(_enemy);
     }
 }
