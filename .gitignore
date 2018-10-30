@@ -4,4 +4,6 @@
 **/cmake_install.cmake
 **/cmake-build-debug/
 **/*.cbp
+**/*.o
+**/*.h.gch
 
