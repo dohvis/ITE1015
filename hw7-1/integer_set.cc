@@ -9,8 +9,10 @@ bool ascend(int i, int j) { return i < j; }
 
 
 void IntegerSet::AddNumber(const int num) {
-    this->numbers_.emplace_back(num);
-    sort(this->numbers_.begin(), this->numbers_.end(), ascend);
+    if (!std::binary_search(this->numbers_.begin(), this->numbers_.end(), num)) {
+        this->numbers_.emplace_back(num);
+        sort(this->numbers_.begin(), this->numbers_.end(), ascend);
+    }
 }
 
 void IntegerSet::DeleteNumber(const int num) {
@@ -22,7 +24,7 @@ void IntegerSet::DeleteNumber(const int num) {
 }
 
 int IntegerSet::GetItem(int pos) const {
-    if(pos >= this->numbers_.size()) {
+    if (pos >= this->numbers_.size()) {
         return -1;
     }
     return this->numbers_[pos];
