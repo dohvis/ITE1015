@@ -3,6 +3,12 @@
 
 using namespace std;
 
+void printVectors(vector<int>& vectors) {
+    for (vector<int>::iterator it = vectors.begin(); it != vectors.end(); it++) {
+        std::cout << *it << " ";
+    }
+    std::cout << std::endl;
+}
 int main() {
     string cmd;
     int value;
@@ -14,18 +20,12 @@ int main() {
             cin >> value;
             is->AddNumber(value);
             tmp = is->GetAll();
-            for (vector<int>::iterator it = tmp.begin(); it != tmp.end(); it++) {
-                std::cout << *it << " ";
-            }
-            std::cout << std::endl;
+            printVectors(tmp);
         } else if (cmd == "del") {
             cin >> value;
             is->DeleteNumber(value);
             tmp = is->GetAll();
-            for (vector<int>::iterator it = tmp.begin(); it != tmp.end(); it++) {
-                std::cout << *it << " ";
-            }
-            std::cout << std::endl;
+            printVectors(tmp);
         } else if (cmd == "get") {
             cin >> value;
             cout << is->GetItem(value) << endl;

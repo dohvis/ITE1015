@@ -16,9 +16,11 @@ void IntegerSet::AddNumber(const int num) {
 }
 
 void IntegerSet::DeleteNumber(const int num) {
-    for (vector<int>::iterator it = this->numbers_.begin(); it != this->numbers_.end(); it++) {
+    for (vector<int>::iterator it = this->numbers_.begin(); it != this->numbers_.end();) {
         if (*it == num) {
-            this->numbers_.erase(it);
+            it = this->numbers_.erase(it);
+        } else {
+            it++;
         }
     }
 }
