@@ -15,6 +15,6 @@ public:
 
 class NonSquare : public Rectangle {
 public:
-    Square(int width, int height);    // 부모 클래스의 생성자를 적절히 호출하도록 소스 파일에 구현
+    NonSquare(int width, int height);    // 부모 클래스의 생성자를 적절히 호출하도록 소스 파일에 구현
     void print();    // NonSquare 객체의 정보를 출력 (아래 실행 예 참조)
 };
