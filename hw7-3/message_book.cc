@@ -1,4 +1,4 @@
-#include <iostream>
+
 #include "message_book.h"
 
 MessageBook::MessageBook() {
@@ -21,8 +21,8 @@ void MessageBook::DeleteMessage(int number) {
 
 vector<int> MessageBook::GetNumbers() const {
     vector<int> result;
-    for (auto it = this->messages_.cbegin(); it != this->messages_.end(); it++) {
-        result.emplace_back(it->first);
+    for (map<int, string>::const_iterator it = this->messages_.cbegin(); it != this->messages_.end(); it++) {
+        result.emplace(result.end(), it->first);
     }
     return result;
 }
