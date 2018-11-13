@@ -22,9 +22,9 @@ int main() {
     objects.emplace_back(a);
     objects.emplace_back(b);
     objects.emplace_back(c);
-    for (int i = 0; i < 3; i++) {
-        printObjectTypeInfo1(objects[i]);
-        printObjectTypeInfo2(*objects[i]);
+    for (vector<A *>::const_iterator it = objects.begin(); it != objects.end(); it++) {
+        printObjectTypeInfo1(*it);
+        printObjectTypeInfo2(**it);
     }
     delete a;
     delete b;

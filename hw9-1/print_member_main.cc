@@ -15,8 +15,8 @@ int main() {
     objects.emplace_back(a);
     objects.emplace_back(b);
     objects.emplace_back(c);
-    for (int i = 0; i < 3; i++) {
-        objects[i]->print();
+    for (vector<A *>::const_iterator it = objects.begin(); it != objects.end(); it++) {
+        (*it)->print();
     }
     delete a;
     delete b;
