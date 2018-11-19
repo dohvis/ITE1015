@@ -140,7 +140,7 @@ void DownTriangle::Draw(Canvas &canvas) const {
     }
 }
 
-Diamond::Diamond(int x, int y, int disatnace, char brush) : Shape(x, y, brush), distance(disatnace) {}
+Diamond::Diamond(int x, int y, int distance, char brush) : Shape(x, y, brush), distance(distance) {}
 
 string Diamond::ShapeInfo() const {
     ostringstream oss;

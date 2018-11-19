@@ -77,7 +77,7 @@ private:
 
 class Diamond : public Shape {
 public:
-    Diamond(int x, int y, int dist, char brush);
+    Diamond(int x, int y, int distance, char brush);
 
     std::string ShapeInfo() const;
 
