@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(hw10_1)
+project(hw10_2)
 
 set(CMAKE_CXX_STANDARD 11)
 
