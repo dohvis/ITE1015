@@ -14,6 +14,7 @@ int main() {
             int seconds;
             cin >> seconds;
             wc.Tick(seconds);
+            cout << wc;
         }
     } while (mode != "quit");
 

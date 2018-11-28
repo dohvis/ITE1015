@@ -21,6 +21,10 @@ public:
         return this->second;
     };
 
+    int getTimestamp() const {
+        return (hour * 3600) + (minute * 60) + second;
+    };
+
 private:
     int hour;
     int minute;
