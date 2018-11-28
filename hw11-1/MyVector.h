@@ -32,5 +32,8 @@ public:
         return out;
     }
 
-//    friend istream &operator>>(istream &in, MyVector b);
+    friend istream &operator>>(istream &in, MyVector b) {
+        array[currentIndex] = number;
+        currentIndex += 1;
+    }
 };

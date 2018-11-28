@@ -5,6 +5,11 @@ MyVector::MyVector(int arraySize) {
     currentIndex = 0;
 }
 
+MyVector::~MyVector() {
+    delete[] array;
+}
+
+
 void MyVector::append(const int number) {
     array[currentIndex] = number;
     currentIndex += 1;
