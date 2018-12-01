@@ -28,7 +28,6 @@ int main() {
             cout << "enter b" << endl;
             for (int i = 0; i < arraySize; i++) {
                 cin >> number;
-
                 mvB->append(number);
             }
         } else if (input == "a") {
@@ -83,7 +82,5 @@ int main() {
 
         }
     } while (input != "quit");
-    delete mvA;
-    delete mvB;
     return 0;
 }
