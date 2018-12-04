@@ -31,7 +31,7 @@ public:
         n_elements = 0;
     }
 
-    int size() {
+    virtual size_t size() {
         return n_elements;
     }
 

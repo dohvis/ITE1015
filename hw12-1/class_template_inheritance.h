@@ -21,7 +21,7 @@ public:
         return this->n_element == 0;
     }
 
-    int size() {
+    size_t size() {
         return MyContainer<T>::size();
     }
 
@@ -70,16 +70,10 @@ public:
 
     MyVector<T> operator+(MyVector<T> &rhs) {
         size_t new_vector_size = this->size() + rhs.size();
-        T *new_obj_array = new int[new_vector_size];
-        for (int i = 0; i < this->size(); i++) {
-            new_obj_array[i] = this->at(i);
+        for (int i = 0; i < rhs.size(); i++) {
+            this->push_back(rhs.obj_arr[i]);
         }
-        int idx = this->size();
-        for (int i = 0; i < rhs.n_elements; i++) {
-            new_obj_array[idx++] = rhs.at(i);
-        }
-
-        MyVector new_vec = MyVector<T>(new_obj_array, new_vector_size);
+        MyVector new_vec = MyVector<T>(this->obj_arr, new_vector_size);
         return new_vec;
     }
 
