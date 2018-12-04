@@ -9,9 +9,11 @@ public:
     }
 
     MyVector(T *arr, size_t n = 1) : MyContainer<T>(arr, n) {
-        this->obj_arr = arr;
-        this->n_elements = n;
         this->capacity = n;
+    }
+
+    ~MyVector() {
+//        delete[] this->obj_arr;
     }
 
 
@@ -29,12 +31,12 @@ public:
 
     void reserve(int new_cap) {
         this->capacity = new_cap;
-        T *tmp = new T[new_cap];
+        T *tmp = new T[this->capacity];
         for (int i = 0; i < this->n_elements; i++) {
             tmp[i] = this->obj_arr[i];
         }
+
         this->obj_arr = tmp;
-        delete[] tmp;
     }
 
     void push_back(T obj) {
@@ -66,19 +68,18 @@ public:
         return this->obj_arr[i];
     }
 
-    MyVector<T> operator+(const MyVector<T> &rhs) {
-        size_t new_vector_size = this->size() + rhs.n_elements;
+    MyVector<T> operator+(MyVector<T> &rhs) {
+        size_t new_vector_size = this->size() + rhs.size();
         T *new_obj_array = new int[new_vector_size];
         for (int i = 0; i < this->size(); i++) {
-            new_obj_array[i] = this->obj_arr[i];
+            new_obj_array[i] = this->at(i);
         }
         int idx = this->size();
         for (int i = 0; i < rhs.n_elements; i++) {
-            new_obj_array[idx++] = rhs.obj_arr[i];
+            new_obj_array[idx++] = rhs.at(i);
         }
 
         MyVector new_vec = MyVector<T>(new_obj_array, new_vector_size);
-        delete[] new_obj_array;
         return new_vec;
     }
 

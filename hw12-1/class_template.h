@@ -10,12 +10,12 @@ public:
         n_elements = 0;
     }
 
-    MyContainer(int n) {
+    MyContainer(size_t n) {
         obj_arr = new T[n];
         n_elements = n;
     }
 
-    MyContainer(T *arr, int n) {
+    MyContainer(T *arr, size_t n) {
         obj_arr = arr;
         n_elements = n;
     }
@@ -36,7 +36,7 @@ public:
     }
 
 protected:
-    T *obj_arr = NULL;
+    T *obj_arr;
     size_t n_elements;
 };
 
