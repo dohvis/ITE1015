@@ -5,12 +5,11 @@ using namespace std;
 class A {
 public:
     A() {
-        cout << "constructor" << endl;
         throw string("constructor");
     }
 
     ~A() {
-        cout << "destructor" << endl;
+        cout << "destructor?" << endl;
         throw string("destructor");
     }
 };
